@@ -6,11 +6,7 @@
 
 ## 广告 OFFICIAL CHIVII
 居然有人假冒UN也是醉了...
-![image](PDF_Images/CHIVII_d1.png)
-![image](PDF_Images/CHIVII_d2.png)
-![image](PDF_Images/CHIVII_d3.png)
-![image](PDF_Images/CHIVII_d4.png)
-![image](PDF_Images/CHIVII_d5.png)
+[AD](README_CHIVII.md)
 
 ## 介绍(~~不会有英文介绍的~~[ENG](README_EN.md)) 📖📖📖
 ### 国内 YOLO 交流群 778907895
