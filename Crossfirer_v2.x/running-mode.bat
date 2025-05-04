@@ -1,19 +1,19 @@
 @echo off
 CHCP 936
-title 辅助启动助手 名侦探柯南战队专用
-::随机可读颜色
+title Asisten Peluncuran Bantu - Khusus Tim Detektif Conan
+::Warna acak yang dapat dibaca
 set /a rand=%random% %% 5
 set HEX=9ABEF
 CALL set hexcolors=%%HEX:~%rand%,1%%
 color 0%hexcolors%
 
 :Check
-::检查是否为管理员权限
+::Periksa apakah memiliki hak administrator
 net session >nul 2>&1
 IF %errorLevel% == 0 (
-    echo         管理员你好
+    echo         Halo, Administrator
 ) ELSE (
-    echo         未以管理员身份运行,无法启动编译版
+    echo         Tidak berjalan sebagai administrator, tidak dapat memulai versi terkompilasi
 )
 Ping /n 3 127.0.0.1 >nul
 GOTO Start
@@ -21,10 +21,10 @@ GOTO Start
 :Start
 CLS
 cd /d %~dp0
-echo         请先仔细阅读说明!!!!!!!!!!!!!!!!!!!!!!!!
+echo         Harap baca petunjuk dengan cermat sebelum melanjutkan!!!!!!!!!!!!!!!!!!!!!!!!
 echo.
 echo.
-echo         请按任意键继续/Press any key to continue
+echo         Tekan sembarang tombol untuk melanjutkan
 echo         .........................................
 pause >nul
 
@@ -32,21 +32,21 @@ pause >nul
 echo.
 echo.
 echo.
-echo       请选择需要运行的辅助/Please select an option
+echo       Silakan pilih asisten yang ingin dijalankan
 echo         ╔════════════════════════════════════╗
-echo         ║ [1]Run All assistants  运行所有辅助
-echo         ║ [2]Run Shooter only    运行自动开火
-echo         ║ [3]Run C4 Hero only    运行战斗猎手
-echo         ║ [4]Run Bhop only       运行普通身法
-echo         ║ [5]Run Clicker only    运行连点助手
-echo         ║ [6]Run Recoilless only 运行基础压枪
-echo         ║ [7]Run NetBlocker only 运行一键限网
-echo         ║ [8]Run Challenger only 运行无尽挂机
-echo         ║ [9]Exit Starter now    退出启动助手
+echo         ║ [1]Jalankan Semua Asisten
+echo         ║ [2]Jalankan Auto Shooter Saja
+echo         ║ [3]Jalankan C4 Hero Saja
+echo         ║ [4]Jalankan Bhop Saja
+echo         ║ [5]Jalankan Clicker Saja
+echo         ║ [6]Jalankan Recoilless Saja
+echo         ║ [7]Jalankan NetBlocker Saja
+echo         ║ [8]Jalankan Challenger Saja
+echo         ║ [9]Keluar dari Asisten Peluncuran
 echo         ╚════════════════════════════════════╝
-choice /C 123456789 /M ">        请选择/Choose a menu option:    "
+choice /C 123456789 /M ">        Silakan pilih opsi menu:    "
 
-:: Note - list ERRORLEVELS in decreasing order
+:: Catatan - daftar ERRORLEVEL dalam urutan menurun
 IF ERRORLEVEL 9 GOTO Run_End
 IF ERRORLEVEL 8 GOTO Run_CLG
 IF ERRORLEVEL 7 GOTO Run_NBK
@@ -106,10 +106,10 @@ GOTO Option
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_Shooter.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_Shooter.ahk"
-) ELSE IF exist 自动开火.exe (
-    Start "" "自动开火.exe"
+) ELSE IF exist Auto_Shooter.exe (
+    Start "" "Auto_Shooter.exe"
 ) ELSE (
-    echo         自动开火不存在!!!
+    echo         Auto Shooter tidak ditemukan!!!
     PowerShell "[console]::beep(1000,500)"
 )
 GOTO:EOF
@@ -118,10 +118,10 @@ GOTO:EOF
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_C4_Hero.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_C4_Hero.ahk"
-) ELSE IF exist 战斗助手.exe (
-    Start "" "战斗助手.exe"
+) ELSE IF exist C4_Hero.exe (
+    Start "" "C4_Hero.exe"
 ) ELSE (
-    echo         战斗助手不存在!!!
+    echo         C4 Hero tidak ditemukan!!!
     PowerShell "[console]::beep(1500,500)"
 )
 GOTO:EOF
@@ -130,10 +130,10 @@ GOTO:EOF
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_Bhop.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_Bhop.ahk"
-) ELSE IF exist 普通身法.exe (
-    Start "" "普通身法.exe"
+) ELSE IF exist Bhop.exe (
+    Start "" "Bhop.exe"
 ) ELSE (
-    echo         普通身法不存在!!!
+    echo         Bhop tidak ditemukan!!!
     PowerShell "[console]::beep(2000,500)"
 )
 GOTO:EOF
@@ -142,10 +142,10 @@ GOTO:EOF
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_Clicker.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_Clicker.ahk"
-) ELSE IF exist 连点助手.exe (
-    Start "" "连点助手.exe"
+) ELSE IF exist Clicker.exe (
+    Start "" "Clicker.exe"
 ) ELSE (
-    echo         连点助手不存在!!!
+    echo         Clicker tidak ditemukan!!!
     PowerShell "[console]::beep(2500,500)"
 )
 GOTO:EOF
@@ -154,10 +154,10 @@ GOTO:EOF
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_Recoilless.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_Recoilless.ahk"
-) ELSE IF exist 基础压枪.exe (
-    Start "" "基础压枪.exe"
+) ELSE IF exist Recoilless.exe (
+    Start "" "Recoilless.exe"
 ) ELSE (
-    echo         基础压枪不存在!!!
+    echo         Recoilless tidak ditemukan!!!
     PowerShell "[console]::beep(3000,500)"
 )
 GOTO:EOF
@@ -166,10 +166,10 @@ GOTO:EOF
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_NetBlocker.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_NetBlocker.ahk"
-) ELSE IF exist 一键限网.exe (
-    Start "" "一键限网.exe"
+) ELSE IF exist NetBlocker.exe (
+    Start "" "NetBlocker.exe"
 ) ELSE (
-    echo         一键限网不存在!!!
+    echo         NetBlocker tidak ditemukan!!!
     PowerShell "[console]::beep(3500,500)"
 )
 GOTO:EOF
@@ -178,10 +178,10 @@ GOTO:EOF
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_Challenger.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_Challenger.ahk"
-) ELSE IF exist 无尽挂机.exe (
-    Start "" "无尽挂机.exe"
+) ELSE IF exist Challenger.exe (
+    Start "" "Challenger.exe"
 ) ELSE (
-    echo         无尽挂机不存在!!!
+    echo         Challenger tidak ditemukan!!!
     PowerShell "[console]::beep(4000,500)"
 )
 GOTO:EOF
@@ -190,10 +190,10 @@ GOTO:EOF
 Ping /n 1 127.0.0.1 >nul
 IF exist "Crossfirer_Controller.ahk" (
     start "" "C:\Program Files\AutoHotkey\AutoHotkeyU64_UIA.exe" "Crossfirer_Controller.ahk"
-) ELSE IF exist 助手控制.exe (
-    Start "" "助手控制.exe"
+) ELSE IF exist Pengontrol_Asisten.exe (
+    Start "" "Pengontrol_Asisten.exe"
 ) ELSE (
-    echo         助手控制不存在!!!
+    echo         Pengontrol Asisten tidak ditemukan!!!
     PowerShell "[console]::beep(4500,500)"
 )
 GOTO:EOF
@@ -202,7 +202,7 @@ GOTO:EOF
 echo.
 echo.
 echo.
-echo         启动助手即将退出/Crossfirer will Exit
+echo         Asisten Peluncuran akan segera keluar
 echo         ......................................
 ::TIMEOUT /T 3
 Ping /n 3 127.0.0.1 >nul
